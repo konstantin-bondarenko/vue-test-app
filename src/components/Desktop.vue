@@ -13,10 +13,12 @@
             <v-col class="display-3" cols="12">
               <v-form class='mx-15'>
               <v-text-field
+                :rules='inputRules'
                 label="Email"
                 v-model="email"
                 type="text"></v-text-field>
               <v-text-field
+                :rules='inputRules'
                 label="Password"
                 v-model="password"
                 type="password"></v-text-field>
@@ -27,7 +29,7 @@
           <v-card-actions class='mx-15'>
             <v-flex>
               <v-checkbox :label="'Remember this device'"></v-checkbox>
-              <v-btn dark width='100%' height='45' class='mt-5 mb-10'>Log in</v-btn>
+              <v-btn dark width='100%' height='45' class='mt-5 mb-10 text-capitalize'>Log in</v-btn>
             </v-flex>
           </v-card-actions>
       </v-card>
@@ -41,6 +43,9 @@ export default {
     return {
       email: '',
       password: '',
+      inputRules: [
+        v => v.length >= 3 || 'Minimum length is 3 characters'
+      ]
     }
   }
 }
