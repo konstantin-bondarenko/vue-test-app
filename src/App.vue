@@ -1,24 +1,22 @@
 <template>
-  <v-app :style="{background:'#E5E5E5'}">
-    <v-app-bar app flat>
+  <v-app>
+    <v-app-bar app flat color='white' :class="{'elevation-1': $vuetify.breakpoint.xs}">
       <span>The Test</span>
     </v-app-bar>
 
-    <v-content>
-      <Desktop class='hidden-xs-only' />
-      <Mobile class='hidden-sm-and-up'/>
-    </v-content>
+    <v-main>
+      <Desktop />
+    </v-main>
   </v-app>
 </template>
 
 <script>
 import Desktop from '@/components/Desktop'
-import Mobile from '@/components/Mobile'
 export default {
   name: 'App',
 
   components: {
-    Desktop, Mobile
+    Desktop
   }
 };
 </script>
