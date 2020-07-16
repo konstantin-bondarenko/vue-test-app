@@ -3,7 +3,7 @@
     <div
       v-for="name of names"
       :key="name">
-      <h1>Hello {{ name }}</h1>
+      <h1>Hello! My name is {{ name }}</h1>
     </div>
   </div>
 </template>
@@ -12,7 +12,7 @@
 export default {
   data () {
     return {
-      names: ['Alex', 'Margo', 'Illaoi']
+      names: ['Alex', 'Margo', 'Illaoi', 'Martin', 'Ihor']
     }
   }
 }
